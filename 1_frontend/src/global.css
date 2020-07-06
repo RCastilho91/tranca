@@ -1,0 +1,149 @@
+body {
+    background: rgb(242,254,255);
+    background: -moz-linear-gradient(180deg, rgba(242,254,255,1) 0%, rgba(132,202,252,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(242,254,255,1) 0%, rgba(132,202,252,1) 100%);
+    background: linear-gradient(180deg, rgba(242,254,255,1) 0%, #84cafc 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f2feff",endColorstr="#84cafc",GradientType=1);
+}
+
+a {
+    text-decoration: none;
+}
+
+hr {
+    width: 80vw;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+img.top-left-logo {
+    width: 45vw;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+img.logo-full-center {
+    margin: 20px 30px 0px 15px;
+    width: 90vw;
+}
+
+div.container {
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+}
+
+.header {
+    position: relative;
+    height: 100px;
+    margin-top: 20px;
+}
+
+.left-header, .right-header {
+    position: absolute;
+    height: 100px;
+    width: 49vw;
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+}
+
+.left-header {
+    left: 0;
+}
+
+.right-header {
+    right: 0;
+    padding-top: 8px;
+}
+
+.target-score.title, .target-score-value {
+    display: block;
+    font-weight: bold;
+}
+
+.game-scoring-area {
+    position: relative;
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.super-team-score {
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.round-title {
+    width: 30vw;
+    vertical-align: bottom;
+    text-align: center;
+}
+
+.game-scoring-area table {
+    margin-top: 30px;
+}
+
+.game-scoring-area table tr th {
+    width: 30vw;
+}
+
+.game-scoring-area table tr td:not(.round-title) {
+    width: 30vw;
+    text-align: center;
+}
+
+.form-controls {
+    margin-top: 20px;
+    float: left;
+    margin-right: 12px;
+    width: 60vw;
+}
+
+.form-separation {
+    display: block;
+    width: 40vw;
+}
+
+.value-inputs {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.value-inputs :first-child {
+    margin-right: 10px;
+}
+
+.round-score-input {
+    width: 20vw;
+    margin-bottom: 15px;
+}
+
+.regular-button, .stay-in-game, .negative-button {
+    width: 180px;
+    height: 40px;
+    color: white;
+    display: block;
+    text-align: center;
+    justify-content: center;
+    border-radius: 20px;
+    font-size: 100%;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: darkgray;
+    -webkit-box-shadow: 2px 1px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 1px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 1px 5px 0px rgba(0,0,0,0.75);
+}
+
+.regular-button {
+    background-color: #2e404d;
+}
+
+.stay-in-game {
+    background-color: #1a8111;
+}
+
+.negative-button {
+    background-color: #8f1b17;
+}
