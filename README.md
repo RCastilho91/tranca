@@ -1,5 +1,5 @@
 # Overview
-This repository is focused on building a Machine Learning model for recognizing playing cards and other specific needs of card game 'Tranca'.
+This repository is focused on building a responsive, mobile first interface to replace pen and paper usage for logging scorings in the 'Tranca' card game.
 
 The goal is to build a recognition algorithm that correctly identifies the cards and sequences (see item 4.1 in the explanatory part below) in a picture, subsequently calling in the scoring algorithm (also included in this repository as contador_tranca.py).
 
