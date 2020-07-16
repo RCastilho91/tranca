@@ -69,7 +69,6 @@ class ThreeTeamTable extends Component {
      render() {
         return (
            <div className="game-scoring-area">
-
               <table id='game-scoring-table'>
                  <tbody>
                     <tr>

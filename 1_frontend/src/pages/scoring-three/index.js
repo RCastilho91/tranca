@@ -4,11 +4,12 @@ import '../../global.css'
 import './styles.css'
 import logo from '../../assets/Tranca transparent.png'
 import ThreeTeamTable from '../../components/ThreeTeamTable';
+import TestModal from '../../components/test-modal/TestModal';
 
-export default function ScoringTwo() {
-
+export default function ScoringThree() {
     return(
         <div className="container">
+            <TestModal />
             <div className="header">
                 <div className="left-header">
                     <Link className="img" to="/"><img className="top-left-logo" src={ logo } alt="Tranca!" /></Link>

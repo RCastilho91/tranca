@@ -9,9 +9,11 @@ const exitModal = require('../../components/ExitModal').handleOpen;
 
 export default function ScoringTwo() {
     
-    var exitModalCall = new ExitModal();
+    var exitModalCall = exitModal;
 
     return(
+        <React.Fragment>
+        <ExitModal />
         <div className="container">
             <div className="header">
                 <div className="left-header">
@@ -25,5 +27,6 @@ export default function ScoringTwo() {
             
             <TwoTeamTable />
         </div>
+        </React.Fragment>
     );
 }

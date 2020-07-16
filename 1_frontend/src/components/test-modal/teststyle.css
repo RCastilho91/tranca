@@ -1,0 +1,10 @@
+.blackened {
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    position: absolute;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+}
