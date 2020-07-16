@@ -31,7 +31,6 @@ class ThreeTeamTable extends Component {
             aValue = parseInt(aValue, 0);
             bValue = parseInt(bValue, 0);
             cValue = parseInt(cValue, 0);
-            // var cValue = parseInt(this.cScoreInput.current.value, 0);
 
             this.handleRoundEnd(roundValue, aValue, bValue, cValue);
          }
@@ -44,6 +43,7 @@ class ThreeTeamTable extends Component {
                ...this.state.roundScores,
                { round: roundValue + 1, teamA: aValue, teamB: bValue, teamC: cValue },
             ],
+            
             totalAScore: this.state.totalAScore + aValue,
             totalBScore: this.state.totalBScore + bValue,
             totalCScore: this.state.totalCScore + cValue

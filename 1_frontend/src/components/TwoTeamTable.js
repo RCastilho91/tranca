@@ -19,7 +19,7 @@ class TwoTeamTable extends Component {
         var aValue = this.aScoreInput.current.value;
         var bValue = this.bScoreInput.current.value;
 
-        if(aValue === "" || bValue === ""){
+        if(aValue == "" || bValue == ""){
            var roundValue = this.state.roundNumber;
            aValue = parseInt(aValue, 0);
            bValue = parseInt(bValue, 0);
