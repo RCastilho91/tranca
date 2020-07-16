@@ -17,18 +17,28 @@ class ThreeTeamTable extends Component {
         }
      }
 
-     handleRoundEnd = () => {
-         var roundValue = this.state.roundNumber;
-         const aValue = parseInt(this.aScoreInput.current.value, 0);
-         const bValue = parseInt(this.bScoreInput.current.value, 0);
-         const cValue = parseInt(this.cScoreInput.current.value, 0);
-         this.valueInputForm.reset();
+      checkNaN = () => {
+         var aValue = this.aScoreInput.current.value;
+         var bValue = this.bScoreInput.current.value;
+         var cValue = this.cScoreInput.current.value;         
 
-         if(aValue == NaN){
-           alert("Please insert a number for every team");
+         if(aValue === "" || bValue === "" || cValue === ""){
+            
+            alert("You must assign a value to every team!");
+
+         } else {
+            var roundValue = this.state.roundNumber;
+            aValue = parseInt(aValue, 0);
+            bValue = parseInt(bValue, 0);
+            cValue = parseInt(cValue, 0);
+            // var cValue = parseInt(this.cScoreInput.current.value, 0);
+
+            this.handleRoundEnd(roundValue, aValue, bValue, cValue);
          }
+      }
 
-        this.setState({
+     handleRoundEnd = (roundValue, aValue, bValue, cValue) => {
+         this.setState({
             roundNumber: roundValue + 1,
             roundScores: [
                ...this.state.roundScores,
@@ -37,7 +47,9 @@ class ThreeTeamTable extends Component {
             totalAScore: this.state.totalAScore + aValue,
             totalBScore: this.state.totalBScore + bValue,
             totalCScore: this.state.totalCScore + cValue
-        });
+         });
+
+         this.valueInputForm.reset();
      }
   
      renderScoreData() {
@@ -99,7 +111,7 @@ class ThreeTeamTable extends Component {
                      </div>
                   </form>
                   
-                  <button onClick={ this.handleRoundEnd } className="regular-button">Log this round</button>
+                  <button onClick={ this.checkNaN } className="regular-button">Log this round</button>
                </div>
 
            </div>

@@ -15,13 +15,22 @@ class TwoTeamTable extends Component {
         }
      }
 
-     handleRoundEnd = () => {
+     checkNaN = () => {
+        var aValue = this.aScoreInput.current.value;
+        var bValue = this.bScoreInput.current.value;
 
-         var roundValue = this.state.roundNumber;
-         const aValue = parseInt(this.aScoreInput.current.value, 0);
-         const bValue = parseInt(this.bScoreInput.current.value, 0);
-         this.valueInputForm.reset();
+        if(aValue === "" || bValue === ""){
+           var roundValue = this.state.roundNumber;
+           aValue = parseInt(aValue, 0);
+           bValue = parseInt(bValue, 0);
 
+           this.handleRoundEnd(roundValue, aValue, bValue)
+        } else {
+           alert("You must assign scores for every team!")
+        }
+     }
+
+     handleRoundEnd = (roundValue, aValue, bValue) => {
          this.setState({
             roundNumber: roundValue + 1,
             roundScores: [
@@ -31,6 +40,8 @@ class TwoTeamTable extends Component {
             totalAScore: this.state.totalAScore + aValue,
             totalBScore: this.state.totalBScore + bValue
          });
+
+         this.valueInputForm.reset();
      }
   
      renderScoreData() {
@@ -83,7 +94,7 @@ class TwoTeamTable extends Component {
                      </div>
                   </form>
                   
-                  <button onClick={ this.handleRoundEnd } className="regular-button">Log this round</button>
+                  <button onClick={ this.checkNaN } className="regular-button">Log this round</button>
                </div>
 
            </div>
