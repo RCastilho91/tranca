@@ -5,6 +5,8 @@ export default class TestModal extends Component {
 
     constructor(props){
         super(props);
+
+        this.handleModalOpen = this.handleModalOpen.bind(this);
         this.state = {
             showMe: true
         }
@@ -27,7 +29,7 @@ export default class TestModal extends Component {
     }
 
     render(){
-            if(!this.state.showMe){
+            if( !this.state.showMe ){
                 return null
             } else {
                 return(
