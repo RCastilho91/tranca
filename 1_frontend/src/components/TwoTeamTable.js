@@ -20,13 +20,15 @@ class TwoTeamTable extends Component {
         var bValue = this.bScoreInput.current.value;
 
         if(aValue == "" || bValue == ""){
-           var roundValue = this.state.roundNumber;
-           aValue = parseInt(aValue, 0);
-           bValue = parseInt(bValue, 0);
-
-           this.handleRoundEnd(roundValue, aValue, bValue)
+         
+         alert("You must assign scores for every team!");
+         
         } else {
-           alert("You must assign scores for every team!")
+            var roundValue = this.state.roundNumber;
+            aValue = parseInt(aValue, 0);
+            bValue = parseInt(bValue, 0);
+
+            this.handleRoundEnd(roundValue, aValue, bValue);  
         }
      }
 
