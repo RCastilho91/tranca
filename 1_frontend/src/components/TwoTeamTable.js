@@ -11,7 +11,8 @@ class TwoTeamTable extends Component {
             totalAScore: 0,
             totalBScore: 0,
             roundNumber: 0,
-            roundScores: []
+            roundScores: [],
+            targetScore: 3500
         }
      }
 
@@ -19,7 +20,7 @@ class TwoTeamTable extends Component {
         var aValue = this.aScoreInput.current.value;
         var bValue = this.bScoreInput.current.value;
 
-        if(aValue == "" || bValue == ""){
+        if(aValue === "" || bValue === ""){
          
          alert("You must assign scores for every team!");
          

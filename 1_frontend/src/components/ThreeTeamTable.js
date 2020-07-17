@@ -13,7 +13,8 @@ class ThreeTeamTable extends Component {
             totalBScore: 0,
             totalCScore: 0,
             roundNumber: 0,
-            roundScores: []
+            roundScores: [],
+            targetScore: 5000
         }
      }
 
@@ -24,7 +25,7 @@ class ThreeTeamTable extends Component {
 
          if(aValue === "" || bValue === "" || cValue === ""){
             
-            alert("You must assign a value to every team!");
+            alert( "You must assign a value to every team!" );
 
          } else {
             var roundValue = this.state.roundNumber;
@@ -50,6 +51,27 @@ class ThreeTeamTable extends Component {
          });
 
          this.valueInputForm.reset();
+     }
+
+     gameOverChecker(){
+        var targetScore = this.state.targetScore;
+        var aScore = this.state.totalAScore;
+        var bScore = this.state.totalBScore;
+        var cScore = this.state.totalCScore;
+
+        if( aScore >= targetScore || bScore >= targetScore || cScore >= targetScore ){
+            if(aScore > bScore && aScore > cScore){
+               console.log("Team A wins");
+            }
+
+            if(bScore > aScore && bScore > cScore){
+               console.log("Team B wins");
+            }
+
+            if(cScore > aScore && cScore > bScore){
+               console.log("Team C wins");
+            }
+        }
      }
   
      renderScoreData() {
