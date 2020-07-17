@@ -3,20 +3,38 @@ import './teststyle.css';
 
 export default class TestModal extends Component {
 
+    constructor(props){
+        super(props);
+        this.state = {
+            showMe: true
+        }
+    }
+
     handleStay(){
-        return
+        this.setState = {
+            showMe: false,
+        }
     }
 
     handleGo(){
         return
     }
 
-    render(){
-        return(
-            <div className="blackened">
-            </div>
-        );
+    handleModalOpen(){
+        this.setState = {
+            showMe: true
+        }
     }
 
+    render(){
+            if(!this.state.showMe){
+                return null
+            } else {
+                return(
+                    <div className="blackened">
+                    </div>
+                );
+            }
+        };
 }
 
