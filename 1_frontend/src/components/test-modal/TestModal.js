@@ -29,14 +29,21 @@ export default class TestModal extends Component {
     }
 
     render(){
-            if( !this.state.showMe ){
+        return(
+            <div className='blackened'>SUP!</div>
+        );
+            /**
+            if(this.state.showMe == false){
+                console.log("State is false")
                 return null
             } else {
+                console.log("State is false")
                 return(
                     <div className="blackened">
                     </div>
                 );
             }
+             */
         };
 }
 
