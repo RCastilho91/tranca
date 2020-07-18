@@ -23,9 +23,13 @@ export default class TestModal extends Component {
     }
 
     handleModalOpen(){
-        this.setState = {
+        
+        console.log("The damn train, CJ!")
+        /**
+         * this.setState = {
             showMe: true
         }
+        */
     }
 
     render(){
