@@ -9,11 +9,12 @@ export default class ScoringThree extends Component {
     constructor(props){
         super(props);
         this.handleLogo = this.handleLogo.bind(this);
-        this.modalOpener = new TestModal().handleModalOpen();
     }
 
     handleLogo(){
         console.log("THE TRAIN, CJ!");
+        var modalOpener = new TestModal();
+        modalOpener.handleModalOpener();
     }
     
     render(){
