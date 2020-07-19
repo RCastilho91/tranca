@@ -11,18 +11,19 @@ export default class ScoringThree extends Component {
         this.handleLogo = this.handleLogo.bind(this);
     }
 
-    handleLogo(){
+    handleLogo() {
         console.log("THE TRAIN, CJ!");
         var modalOpener = new TestModal();
-        modalOpener.handleModalOpener();
+        modalOpener.handleModalOpen();
     }
     
     render(){
         return(
             <div className="container">
+                <TestModal />
                 <div className="header">
                     <div className="left-header">
-                        <img className="top-left-logo" onClick={() => this.modalOpener} src={ logo } alt="Tranca!" />
+                        <img className="top-left-logo" onClick={ () => this.handleLogo() } src={ logo } alt="Tranca!" />
                     </div>
                     <div className="right-header">
                         <span className="target-score-title">Target score</span>
