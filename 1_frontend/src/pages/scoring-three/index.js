@@ -8,19 +8,24 @@ export default class ScoringThree extends Component {
     
     constructor(props){
         super(props);
+
+        this.state = {
+            modalVisibility: false,
+        }
+
         this.handleLogo = this.handleLogo.bind(this);
     }
 
     handleLogo() {
-        console.log("THE TRAIN, CJ!");
-        var modalOpener = new TestModal();
-        modalOpener.handleModalOpen();
+        this.setState({
+            modalVisibility: true
+        })
     }
     
     render(){
         return(
             <div className="container">
-                <TestModal />
+                <TestModal showMe={ this.state.modalVisibility } />
                 <div className="header">
                     <div className="left-header">
                         <img className="top-left-logo" onClick={ () => this.handleLogo() } src={ logo } alt="Tranca!" />
