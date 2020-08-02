@@ -6,21 +6,24 @@ export default class TestModal extends Component {
     constructor(props){
         super(props);
         
+        this.state = {
+            showMe: true
+        }
+                
         this.handleStay = this.handleStay.bind(this);
         this.handleGo = this.handleGo.bind(this);
         this.handleModalOpen = this.handleModalOpen.bind(this);
-        
-        this.state = {
-            showMe: false
-        }
     }
 
     handleStay(){
         console.log("The DAMN train, CJ!");
+        console.log(`ShowMe: ${ this.state.showMe }`);
         
         this.setState({
             showMe: false
         });
+
+        console.log(`ShowMe: ${ this.state.showMe }`);
     }
 
     handleGo(){
@@ -38,7 +41,7 @@ export default class TestModal extends Component {
     }
 
     render(){
-        const style = this.state.showMe ? { display: 'none' } : { display: 'block' };
+        const style = this.state.showMe ? { display: 'block' } : { display: 'none' };
 
         return(
             <div className="blackened" style={ style }>
