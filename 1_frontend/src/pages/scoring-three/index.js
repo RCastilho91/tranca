@@ -28,7 +28,7 @@ export default class ScoringThree extends Component {
                 <TestModal showMe={ this.state.modalVisibility } />
                 <div className="header">
                     <div className="left-header">
-                        <img className="top-left-logo" onClick={ () => this.handleLogo() } src={ logo } alt="Tranca!" />
+                        <img className="top-left-logo" onClick={ () => this.handleLogo.bind(this) } src={ logo } alt="Tranca!" />
                     </div>
                     <div className="right-header">
                         <span className="target-score-title">Target score</span>
