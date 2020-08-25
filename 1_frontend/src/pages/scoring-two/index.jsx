@@ -1,13 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
 import '../../global.css'
 import './styles.css'
-import logo from '../../assets/Tranca transparent.png'
 import TwoTeamTable from '../../components/ScoringTables/TwoTeamTable';
 import ScoringHeader from '../../components/ScoringTables/ScoringHeader';
 import ExitModal from '../../components/Modals/ExitModal';
 
-export default class ScoringTwo {
+export default class ScoringTwo extends Component {
     constructor(props){
         super(props);
 
@@ -17,11 +15,16 @@ export default class ScoringTwo {
         }
 
         this.toggleExitModal = this.toggleExitModal.bind(this);
+        this.handleMaxScore = this.handleMaxScore.bind(this);
     }
 
-
     toggleExitModal(){
+        console.log("Click detected");
 
+        this.setState({
+            ...this.state,
+            exitModal: !this.state.exitModal
+        })
     }
 
     handleMaxScore( newScore ){
@@ -33,7 +36,11 @@ export default class ScoringTwo {
 
     render(){
         return(
-            <ScoringHeader { ...this.state.targetScore } />
+            <div className="scoring-page">
+                { this.state.exitModal ? <ExitModal toggleExitModal={ this.toggleExitModal.bind(this) } /> : null }
+                <ScoringHeader { ...this.state } toggleExitModal={ this.toggleExitModal.bind(this) } />
+                <TwoTeamTable />
+            </div>
         )
     }
 }

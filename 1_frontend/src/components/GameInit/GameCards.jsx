@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { GiSpades, GiHearts } from "react-icons/gi";
-import './styles.css';
+import '../styles.css';
 
 class NewGameTwo extends Component {
     render(){

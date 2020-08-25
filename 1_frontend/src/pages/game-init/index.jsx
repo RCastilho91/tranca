@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../../global.css'
 import './styles.css'
 import logo from '../../assets/Tranca transparent.png'
-import { NewGameTwo, NewGameThree } from '../../components/GameCards';
+import { NewGameTwo, NewGameThree } from '../../components/GameInit/GameCards';
 
 export default function GameInitiation(){
     return (

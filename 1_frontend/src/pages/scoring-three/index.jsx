@@ -1,9 +1,8 @@
 import React,{ Component } from 'react';
-import '../../global.css'
-import './styles.css'
-import logo from '../../assets/Tranca transparent.png'
-import ThreeTeamTable from '../../components/ThreeTeamTable';
-import TestModal from '../../components/test-modal/TestModal';
+import '../../global.css';
+import './styles.css';
+import logo from '../../assets/Tranca transparent.png';
+import ThreeTeamTable from '../../components/ScoringTables/ThreeTeamTable';
 export default class ScoringThree extends Component {
     
     constructor(props){
@@ -25,7 +24,6 @@ export default class ScoringThree extends Component {
     render(){
         return(
             <div className="container">
-                <TestModal showMe={ this.state.modalVisibility } />
                 <div className="header">
                     <div className="left-header">
                         <img className="top-left-logo" onClick={ () => this.handleLogo.bind(this) } src={ logo } alt="Tranca!" />
