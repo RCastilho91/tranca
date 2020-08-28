@@ -19,8 +19,6 @@ export default class ScoringTwo extends Component {
     }
 
     toggleExitModal(){
-        console.log("Click detected");
-
         this.setState({
             ...this.state,
             exitModal: !this.state.exitModal
