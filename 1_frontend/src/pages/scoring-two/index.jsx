@@ -37,8 +37,8 @@ export default class ScoringTwo extends Component {
     render(){
         return(
             <div className="scoring-page">
-                { this.state.exitModal ? <ExitModal toggleExitModal={ this.toggleExitModal.bind(this) } /> : null }
-                <ScoringHeader { ...this.state } toggleExitModal={ this.toggleExitModal.bind(this) } />
+                { this.state.exitModal ? <ExitModal handleModal={ this.toggleExitModal } /> : null }
+                <ScoringHeader { ...this.state } handleModal={ this.toggleExitModal } />
                 <TwoTeamTable />
             </div>
         )

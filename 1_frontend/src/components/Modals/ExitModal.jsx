@@ -4,7 +4,7 @@ import '../styles.css';
 
 export default function ExitModal( props ){
     
-    const closeModal = props.toggleExitModal;
+    const closeModal = props.handleModal;
     
     return(
         <div className="modal-container">
