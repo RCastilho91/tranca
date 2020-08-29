@@ -12,7 +12,6 @@ class TwoTeamTable extends Component {
             totalBScore: 0,
             roundNumber: 0,
             roundScores: [],
-            targetScore: 3500
         }
      }
 
@@ -45,6 +44,23 @@ class TwoTeamTable extends Component {
          });
 
          this.valueInputForm.reset();
+         this.scoreChecker(this.state.totalAScore, this.state.totalBScore)
+     }
+
+     scoreChecker(scoreA, scoreB){
+        if(scoreA >= this.props.targetScore && scoreA > scoreB){
+           var winningTeam = this.props.teamA;
+           this.props.engGame(winningTeam);
+        }
+
+        if(scoreB >= this.props.targetScore && scoreB > scoreA){
+           var winningTeam = this.props.teamB;
+           this.props.endGame(winningTeam);
+        }
+
+        if(scoreA >= this.props.targetScore || scoreB >= this.props.targetScore){
+           scoreA == scoreB ? this.props.endGame("tie") : null;
+        }
      }
   
      renderScoreData() {

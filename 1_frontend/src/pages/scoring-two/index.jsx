@@ -12,6 +12,9 @@ export default class ScoringTwo extends Component {
         this.state = {
             targetScore: 3500,
             exitModal: false,
+            nameChangeModal: false,
+            scoreChangeModal: false,
+            gameOverModal: false,
             teamA: 'Time A',
             teamB: 'Time B'
         }
@@ -31,6 +34,32 @@ export default class ScoringTwo extends Component {
         this.setState({
             ...this.state,
             targetScore: newScore
+        })
+    }
+
+    handleTeamNameChange(teamA, teamB){
+        this.setState({
+            ...this.state,
+            teamA: { teamA },
+            teamB: { teamB }
+        })
+    }
+
+    handleGameReset(){
+        
+    }
+
+    handleGameOver(winningTeam){
+        this.setState({
+            ...this.state,
+            gameOverModal: !this.state.gameOverModal
+        })
+    }
+
+    handleScoreChange(score){
+        this.setState({
+            ...this.state,
+            targetScore: { score },
         })
     }
 
