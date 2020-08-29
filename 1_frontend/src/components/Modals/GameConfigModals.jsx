@@ -1,16 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
 import '../styles.css';
 
-function TwoTeamNameChange(props){
-    return(
-        <div className="name-change-modal">
+class TwoTeamNameChange extends Component {
+    constructor(props){
+        super(props);
 
-            <div className="modal-controls">
-                <button className="regular-button">Aplicar</button>
-                <button className="negative-button">Cancelar</button>
+        this.teamAName = React.createRef();
+        this.teamBName = React.createRef();
+    }
+
+    render(){
+        return(
+            <div className="name-change-modal">
+                <div className="change-name-modal-content">
+                    <span className="modal-team-name">{ props.teamA }</span>
+                    <input type="text" placeholder={ props.teamA } ref={ this.teamAName } />
+    
+                    <span className="modal-team-name">{ props.teamB }</span>
+                    <input type="text" placeholder={ props.teamB } ref={ this.teamBName } />
+                </div>
+
+                <div className="modal-controls">
+                    <button className="regular-button" 
+                        onClick={ props.handleTeamNameChange(this.teamAName, this.teamBName) }>
+                        Aplicar
+                    </button>
+                    
+                    <button className="negative-button">Cancelar</button>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 function ThreeTeamNameChange(props){

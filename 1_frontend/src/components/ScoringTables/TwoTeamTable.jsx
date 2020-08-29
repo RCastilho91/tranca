@@ -22,7 +22,7 @@ class TwoTeamTable extends Component {
 
         if(aValue === "" || bValue === ""){
          
-         alert("You must assign scores for every team!");
+         alert("Por favor, insira um placar por time!");
          
         } else {
             var roundValue = this.state.roundNumber;
@@ -68,8 +68,8 @@ class TwoTeamTable extends Component {
                  <tbody>
                     <tr>
                         <th rowSpan="2">Round</th>
-                        <th>Team A</th>
-                        <th>Team B</th>
+                        <th> { this.props.teamA }</th>
+                        <th> { this.props.teamB }</th>
                     </tr>
 
                     <tr>
@@ -87,17 +87,17 @@ class TwoTeamTable extends Component {
                <div className="form-controls">
                   <form ref={(form) => this.valueInputForm = form} className="value-inputs">
                      <div className="form-separation">
-                        <label for="a-score-input">Team A</label>
+                        <label for="a-score-input">{ this.props.teamB }</label>
                         <input type="number" id="a-score-input" ref={ this.aScoreInput } className="round-score-input" />
                      </div>
 
                      <div className="form-separation">
-                        <label for="a-score-input">Team B</label>
+                        <label for="a-score-input">{ this.props.teamB }</label>
                         <input type="number" id="b-score-input" ref={ this.bScoreInput } className="round-score-input" />
                      </div>
                   </form>
                   
-                  <button onClick={ this.checkNaN } className="regular-button">Log this round</button>
+                  <button onClick={ this.checkNaN } className="regular-button">Registrar placar</button>
                </div>
 
            </div>
