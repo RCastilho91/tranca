@@ -75,8 +75,21 @@ class TwoTeamTable extends Component {
            )
         })
      }
-  
+
+     scoreResetProcedure(){
+        this.setState({
+            totalAScore: 0,
+            totalBScore: 0,
+            roundNumber: 0,
+            roundScores: [],
+        })
+
+        this.props.completeReset
+     }
+
      render() {
+
+         { this.props.scoreResetProcedure ? this.scoreResetProcedure : null}
         return (
            <div className="game-scoring-area">
 

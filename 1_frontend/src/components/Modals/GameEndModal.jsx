@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function GameEndModal(winner){
+export default function GameEndModal(props){
     
     var endingMessage = ''
 
-    winner == "tie" ? endingMessage = "Empate! Iniciar outra rodada?" : endingMessage = `${ winner } ganhou! Iniciar outra rodada?`;
+    props.winningTeam == "tie" ? endingMessage = "Empate! Iniciar outra rodada?" : endingMessage = `${ props.winningTeam } ganhou! Iniciar outra rodada?`;
 
     return(
         <div className="game-ending-modal">
@@ -14,7 +14,7 @@ export default function GameEndModal(winner){
             </span>
 
             <div className="modal-controls">
-                <button className="regular-button">
+                <button className="regular-button" onClick={ props.restartGame }>
                     Zerar o placar
                 </button>
 

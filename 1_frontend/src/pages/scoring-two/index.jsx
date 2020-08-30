@@ -4,6 +4,7 @@ import './styles.css';
 import TwoTeamTable from '../../components/ScoringTables/TwoTeamTable';
 import ScoringHeader from '../../components/ScoringTables/ScoringHeader';
 import ExitModal from '../../components/Modals/ExitModal';
+import GameEndModal from '../../components/Modals/GameEndModal';
 
 export default class ScoringTwo extends Component {
     constructor(props){
@@ -14,9 +15,10 @@ export default class ScoringTwo extends Component {
             exitModal: false,
             nameChangeModal: false,
             scoreChangeModal: false,
-            gameOverModal: false,
             teamA: 'Time A',
-            teamB: 'Time B'
+            teamB: 'Time B',
+            winningTeam: null,
+            scoreResetProcedure: false,
         }
 
         this.toggleExitModal = this.toggleExitModal.bind(this);
@@ -45,14 +47,23 @@ export default class ScoringTwo extends Component {
         })
     }
 
-    handleGameReset(){
-        
+    initiateGameReset(){
+        this.setState({
+            winningTeam: null,
+            scoreResetProcedure: true
+        })
+    }
+
+    endGameReset(){
+        this.setState({
+            scoreResetProcedure: false
+        })
     }
 
     handleGameOver(winningTeam){
         this.setState({
             ...this.state,
-            gameOverModal: !this.state.gameOverModal
+            winningTeam: { winningTeam }
         })
     }
 
@@ -66,9 +77,10 @@ export default class ScoringTwo extends Component {
     render(){
         return(
             <div className="scoring-page">
+                { this.state.winningTeam != null ? <GameEndModal { ...this.state } restartGame={ this.handleGameReset } /> : null }
                 { this.state.exitModal ? <ExitModal handleModal={ this.toggleExitModal } /> : null }
                 <ScoringHeader { ...this.state } handleModal={ this.toggleExitModal } />
-                <TwoTeamTable {...this.state } />
+                <TwoTeamTable {...this.state } completeReset={ this.endGameReset } />
             </div>
         )
     }
