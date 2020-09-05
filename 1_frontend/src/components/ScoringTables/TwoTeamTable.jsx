@@ -47,19 +47,21 @@ class TwoTeamTable extends Component {
          this.scoreChecker(this.state.totalAScore, this.state.totalBScore)
      }
 
+     tieHandler(){
+        return this.props.endGame("tie");
+     }
+
      scoreChecker(scoreA, scoreB){
+         var testFunction = () => {this.props.endGame("tie")}
+
         if(scoreA >= this.props.targetScore && scoreA > scoreB){
            var winningTeam = this.props.teamA;
            this.props.engGame(winningTeam);
-        }
-
-        if(scoreB >= this.props.targetScore && scoreB > scoreA){
+        } else if(scoreB >= this.props.targetScore && scoreB > scoreA){
            var winningTeam = this.props.teamB;
            this.props.endGame(winningTeam);
-        }
-
-        if(scoreA >= this.props.targetScore || scoreB >= this.props.targetScore){
-           scoreA == scoreB ? this.props.endGame("tie") : null;
+        } else if(scoreA >= this.props.targetScore || scoreB >= this.props.targetScore){
+           scoreA === scoreB ? testFunction : null;
         }
      }
   
@@ -84,15 +86,13 @@ class TwoTeamTable extends Component {
             roundScores: [],
         })
 
-        this.props.completeReset
+        return this.props.completeReset
      }
 
      render() {
-
-         { this.props.scoreResetProcedure ? this.scoreResetProcedure : null}
         return (
            <div className="game-scoring-area">
-
+               { this.props.scoreResetProcedure ? this.scoreResetProcedure : null}
               <table id='game-scoring-table'>
                  <tbody>
                     <tr>
