@@ -5,7 +5,7 @@ export default function GameEndModal(props){
     
     var endingMessage = ''
 
-    props.winningTeam == "tie" ? endingMessage = "Empate! Iniciar outra rodada?" : endingMessage = `${ props.winningTeam } ganhou! Iniciar outra rodada?`;
+    props.winningTeam === "tie" ? endingMessage = "Empate! Iniciar outra rodada?" : endingMessage = `${ props.winningTeam } ganhou! Iniciar outra rodada?`;
 
     return(
         <div className="game-ending-modal">
