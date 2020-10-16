@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import ScoringHeader from "../components/ScoringHeader/ScoringHeader";
 import TwoTeamTable from "../components/ScoringTables/TwoTeamTable";
 
+// https://www.youtube.com/watch?v=sX3KeP7v7Kg&t=707s&ab_channel=DaveCeddia
+
 export default class ScoringTwo extends Component {
   constructor(props) {
     super(props);
