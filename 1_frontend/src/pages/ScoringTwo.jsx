@@ -1,12 +1,47 @@
-import React, { useState } from 'react';
+import React, { Component } from "react";
+import ScoringHeader from "../components/ScoringHeader/ScoringHeader";
+import TwoTeamTable from "../components/ScoringTables/TwoTeamTable";
 
-export default function ScoringTwo(props){
+export default class ScoringTwo extends Component {
+  constructor(props) {
+    super(props);
 
-    const [teamA, setTeamA] = useState("Time A");
-    const [teamB, setTeamB] = useState("Time B");
+    this.state = {
+      teamA: "Time A",
+      teamB: "Time B",
+      scoreLimit: 3500,
+      teamAScore: 0,
+      teamBScore: 0,
+      roundScores: [
+        {
+          round: 0,
+          teamA: 0,
+          teamB: 0,
+        },
+        {
+          round: 1,
+          teamA: 1500,
+          teamB: 1200,
+        },
+      ],
+    };
 
-    
+    this.teamNameSwitch = this.teamNameSwitch.bind(this);
+  }
 
+  teamNameSwitch(event) {
+    targetTeam = event.current.id;
+    newTeamName = event.current.value;
 
-    return <div className="scoring-two">Scoring two</div>
+    targetTeam === "teamARef" ? setTeamA(newTeamName) : setTeamB(newTeamB);
+  }
+
+  render() {
+    return (
+      <div className="scoring-two">
+        <ScoringHeader scoreLimit={this.props.scoreLimit} teamNameSwitch={this.teamNameSwitch} />
+        <TwoTeamTable {...this.props} teamNameSwitch={this.teamNameSwitch} />
+      </div>
+    );
+  }
 }
